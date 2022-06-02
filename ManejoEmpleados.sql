@@ -22,17 +22,10 @@ codigoCiudad int not null
 
 create unique index NombreCiudad on Ciudades(nombreCiudad);
 
-create table TipoDoc(
-idTipoDoc int not null primary key,
-nombreTipoDoc varchar(40) not null
-);
-
-create unique index nombreDocumento on TipoDoc(nombreTipoDoc);
 
 create table Empleados(
 idEmpleado int auto_increment not null primary key,
-tipoDocumentoIdentidad int not null,
-foreign key (tipoDocumentoIdentidad) references TipoDoc(idTipoDoc),
+tipoDocumentoIdentidad varchar(2) not null,
 documentoNumero int not null,
 empleadoNombre varchar (30) not null,
 empleadoApellido varchar (30) not null,
